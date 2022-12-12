@@ -1,5 +1,4 @@
 export const sort = (arr = [], selector = "cheap") => {
-  console.log(arr);
   const sortedArr = arr.sort((a, b) => {
     const args =
       selector === "cheap"
