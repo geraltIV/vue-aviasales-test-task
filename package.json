@@ -1,0 +1,23 @@
+{
+  "name": "vue-aviasales-test-task",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "date-fns": "^2.29.3",
+    "prettier": "^2.8.1",
+    "vue": "^3.2.45",
+    "vuex": "^4.0.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.0.0",
+    "@vue/cli-plugin-vuex": "~5.0.0",
+    "sass": "^1.56.2",
+    "vite": "^4.0.0"
+  },
+  "type": "module"
+}
