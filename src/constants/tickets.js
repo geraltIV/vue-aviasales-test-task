@@ -1,4 +1,4 @@
-import { FILTERS_LABELS, BUTTONS_LABELS } from "./messages.js";
+import { FILTERS_LABELS, BUTTONS_LABELS, FILTERS_NAMES } from "./messages.js";
 
 export const TRANSFERS = [
   {
@@ -36,16 +36,16 @@ export const TRANSFERS = [
 export const BUTTONS = [
   {
     label: BUTTONS_LABELS.CHEAPEST,
-    selector: "cheap",
+    selector: FILTERS_NAMES.CHEAP,
     extraClass: "left-button",
   },
   {
     label: BUTTONS_LABELS.FASTEST,
-    selector: "fast",
+    selector: FILTERS_NAMES.FAST,
   },
   {
     label: BUTTONS_LABELS.OPTIMAL,
-    selector: "optimal",
+    selector: FILTERS_NAMES.OPTIMAL,
     extraClass: "right-button",
   },
 ];

@@ -6,6 +6,9 @@ $bg-color: #F3F7FA;
 $highlight-color: #2196F3;
 $highlight-background: #f1fcff;
 $font: 'Open Sans', sans-serif;
+$light-gray-color: a0b0b9;
+$white-color: #fff;
+$disabled-color: grey;
 
 %display-center {
   display: flex;
@@ -20,7 +23,7 @@ $font: 'Open Sans', sans-serif;
 }
 
 %rounded-shadowed {
-  background-color: white;
+  background-color: $white-color;
   border-radius: 5px;
   box-shadow: 0px 2px 8px 0px #0000001A;
 }
@@ -41,7 +44,7 @@ $font: 'Open Sans', sans-serif;
   @extend %headers-font;
   border-radius: 5px;
   background-color: $highlight-color;
-  color: white;
+  color: $white-color;
 }
 
 body {

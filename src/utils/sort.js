@@ -1,12 +1,14 @@
-export const sort = (arr = [], selector = "cheap") => {
+import { FILTERS_NAMES } from "../constants/messages.js";
+
+export const sort = (arr = [], selector = FILTERS_NAMES.CHEAP) => {
   const sortedArr = arr.sort((a, b) => {
     const args =
-      selector === "cheap"
+      selector === FILTERS_NAMES.CHEAP
         ? {
             first: a.price,
             second: b.price,
           }
-        : selector === "fast"
+        : selector === FILTERS_NAMES.FAST
         ? {
             first: a.segments[0].duration,
             second: b.segments[0].duration,

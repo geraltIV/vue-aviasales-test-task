@@ -2,7 +2,7 @@
   <div class="ticket">
     <div class="ticket__header">
       <div class="header__price">
-        {{ `${ticket?.price?.toLocaleString()} ГРН` }}
+        {{ `${formatTicketPrice(ticket?.price)} ГРН` }}
       </div>
       <div class="header__ticket-logo">
         <img
@@ -53,6 +53,9 @@ export default {
     formatTime,
     formatDuration,
     formatStops,
+    formatTicketPrice(price) {
+      return price ? price.toLocaleString() : 0;
+    },
   },
 };
 </script>

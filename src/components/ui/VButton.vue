@@ -16,7 +16,7 @@ export default {
 .sort-button {
   width: 100%;
   min-height: 50px;
-  background-color: white;
+  background-color: $white-color;
   border-radius: 0;
   text-transform: uppercase;
   color: $primary-color;
@@ -26,11 +26,11 @@ export default {
 
   &.active {
     background-color: $highlight-color;
-    color: white;
+    color: $white-color;
   }
 
   &.active.disabled {
-    background: grey;
+    background: $disabled-color;
     outline: none;
   }
 }

@@ -1,35 +1,37 @@
 <template>
-  <div class="tickets__header">
-    <img class="header__logo" :src="logo" />
-  </div>
-  <div class="tickets__body">
-    <filters :transfers="transfers" @setFilters="changeFilters($event)" />
-    <div class="tickets__container">
-      <div class="buttons__container">
-        <v-button
-          v-for="button in buttons"
-          :key="button.selector"
-          @click="sortTickets(button.selector)"
-          :class="{
-            active: sort === button.selector,
-            disabled: !sortedTickets.length,
-          }"
-          :disabled="!sortedTickets.length"
-          >{{ button.label }}</v-button
+  <div>
+    <div class="tickets__header">
+      <img class="header__logo" :src="logo" />
+    </div>
+    <div class="tickets__body">
+      <filters :transfers="transfers" @setFilters="changeFilters($event)" />
+      <div class="tickets__container">
+        <div class="buttons__container">
+          <v-button
+            v-for="button in sortButtons"
+            :key="button.selector"
+            @click="sortTickets(button.selector)"
+            :class="{
+              active: sort === button.selector,
+              disabled: !sortedTickets.length,
+            }"
+            :disabled="!sortedTickets.length"
+            >{{ button.label }}</v-button
+          >
+        </div>
+        <loader v-if="loading" />
+        <ticket-list-view
+          v-else
+          :tickets="sortedTickets.slice(0, slicedIndex)"
+          :error-text="message"
+        />
+        <div
+          v-if="sortedTickets.length"
+          @click="loadMoreTickets()"
+          class="more-button"
         >
-      </div>
-      <loader v-if="loading" />
-      <ticket-list-view
-        v-else
-        :tickets="sortedTickets.slice(0, slicedIndex)"
-        :error-text="message"
-      />
-      <div
-        v-if="sortedTickets.length"
-        class="more-button"
-        @click="loadMoreTickets()"
-      >
-        <v-button>Показати ще 5 квитків</v-button>
+          <v-button>Показати ще 5 квитків</v-button>
+        </div>
       </div>
     </div>
   </div>
@@ -38,7 +40,10 @@
 <script>
 import { mapActions, mapGetters } from "vuex";
 import { BUTTONS, TRANSFERS } from "./constants/tickets.js";
-import { NO_MATHCED_TICKETS_MESSAGE } from "./constants/messages.js";
+import {
+  NO_MATHCED_TICKETS_MESSAGE,
+  FILTERS_NAMES,
+} from "./constants/messages.js";
 import TicketListView from "./components/TicketList.vue";
 import Filters from "./components/Filters.vue";
 import VButton from "./components/ui/VButton.vue";
@@ -52,10 +57,10 @@ export default {
     loading: false,
     logo,
     tickets: [],
-    sort: "cheap",
+    sort: FILTERS_NAMES.CHEAP,
     filters: [],
     transfers: TRANSFERS,
-    buttons: BUTTONS,
+    sortButtons: BUTTONS,
     slicedIndex: 5,
   }),
   async mounted() {
@@ -153,6 +158,6 @@ export default {
 .more-button .sort-button {
   margin-top: 30px;
   background-color: $highlight-color;
-  color: white;
+  color: $white-color;
 }
 </style>

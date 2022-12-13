@@ -20,6 +20,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../assets/styles/base.scss";
+
 .flight {
   width: 141px;
   display: flex;
@@ -28,7 +30,7 @@ export default {
     font-weight: 600;
     line-height: 18px;
     letter-spacing: 0.5px;
-    color: #a0b0b9;
+    color: $light-gray-color;
   }
   &__info {
     font-weight: 600;

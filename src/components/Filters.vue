@@ -4,7 +4,7 @@
     <div
       class="filter-stops__stop"
       v-for="transfer in transfers"
-      :key="transfer?.label"
+      :key="transfer.label"
     >
       <input
         class="stop__selector"
@@ -22,17 +22,17 @@ import { FILTERS_TITLE } from "../constants/messages.js";
 
 export default {
   name: "Filters",
-  data() {
-    return {
-      FILTERS_TITLE,
-    };
-  },
+  data: () => ({
+    FILTERS_TITLE,
+  }),
   props: {
     transfers: {
       type: Array,
+      required: true,
       default: () => [],
     },
   },
+  emits: ["setFilters"],
   methods: {
     setFilters(event) {
       this.$emit("setFilters", event);

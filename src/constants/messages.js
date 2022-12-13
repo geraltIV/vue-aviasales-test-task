@@ -20,3 +20,9 @@ export const FILTERS_LABELS = {
   TWO_TRANSFERS: "2 пересадки",
   THREE_TRANSFERS: "3 пересадки",
 };
+
+export const FILTERS_NAMES = {
+  CHEAP: "cheap",
+  FAST: "fast",
+  OPTIMAL: "optimal",
+};

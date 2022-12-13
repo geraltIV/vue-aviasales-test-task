@@ -44,7 +44,7 @@ export default {
   fill: $highlight-color;
 }
 .cal-loader__path {
-  stroke: #a0b0b9;
+  stroke: $light-gray-color;
   animation: 1.4s ease-in-out infinite loader-path;
 }
 
