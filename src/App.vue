@@ -135,8 +135,11 @@ export default {
     margin-bottom: 30px;
   }
   &__body {
-    display: flex;
-    gap: 50px;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 2fr;
+    gap: 30px;
+    height: 100%;
   }
   &__container {
     max-width: 502px;

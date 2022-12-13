@@ -47,7 +47,7 @@ export default {
 .filter-stops {
   @extend %rounded-shadowed;
   width: 232px;
-  max-height: 290px;
+  height: 290px;
   &__header {
     @extend %display-center;
     @extend %headers-font;

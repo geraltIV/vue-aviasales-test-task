@@ -5,7 +5,10 @@
         {{ `${ticket?.price?.toLocaleString()} ГРН` }}
       </div>
       <div class="header__ticket-logo">
-        <img class="ticket-logo__img" :src="logo" />
+        <img
+          class="ticket-logo__img"
+          :src="`//pics.avs.io/99/36/${ticket.carrier}.png`"
+        />
       </div>
     </div>
     <div class="ticket__body">
@@ -34,23 +37,18 @@
 <script>
 import { formatTime, formatDuration, formatStops } from "../utils/formaters.js";
 import TicketFlight from "./TicketFlight.vue";
-import logo from "../assets/images/air-logo.svg";
 
 export default {
   name: "TicketItem",
   components: {
     TicketFlight,
   },
-  data: () => ({
-    logo,
-  }),
   props: {
     ticket: {
       type: Object,
       default: () => ({}),
     },
   },
-
   methods: {
     formatTime,
     formatDuration,
@@ -93,5 +91,9 @@ export default {
 .ticket__flight--small {
   flex-flow: column wrap;
   max-height: 88px;
+}
+.ticket-logo__img {
+  width: 110px;
+  height: 36px;
 }
 </style>
