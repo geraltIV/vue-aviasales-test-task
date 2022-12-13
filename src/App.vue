@@ -10,7 +10,11 @@
           v-for="button in buttons"
           :key="button.selector"
           @click="sortTickets(button.selector)"
-          :class="{ active: sort === button.selector }"
+          :class="{
+            active: sort === button.selector,
+            disabled: !sortedTickets.length,
+          }"
+          :disabled="!sortedTickets.length"
           >{{ button.label }}</v-button
         >
       </div>

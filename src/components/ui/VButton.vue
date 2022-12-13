@@ -28,5 +28,10 @@ export default {
     background-color: $highlight-color;
     color: white;
   }
+
+  &.active.disabled {
+    background: grey;
+    outline: none;
+  }
 }
 </style>
